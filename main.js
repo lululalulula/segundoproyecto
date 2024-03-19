@@ -19,6 +19,7 @@ const casasruraleslink = document.querySelector("#casasruraleslink");
 const main = document.querySelector("main");
 
 const pintarHome = () => {
+  // constante main
   const main = document.querySelector("main");
   //Por seguridad, lo vaciamos
   main.innerHTML = "";
@@ -33,10 +34,12 @@ const pintarHome = () => {
 };
 
 
+
 //funcion de pintar hoteles
 const pintarhotelesaccesibles = () => {
   //vaciamos
-  const main = document.querySelector(""); //lenamos con innerhtml
+  const main = document.querySelector("main"); 
+  //llenamos con innerhtml
   main.innerHTML = `
   <section id = "hotelesaccesibles"></section>
  `;
@@ -49,23 +52,42 @@ for (const hotel of hotelesaccesibles) {
   //Le rellenamos el HTML al article con innerHTML
   article.innerHTML = `
   <h4>Hoteles adaptados de la sierra de Madrid</h4>
-    <p>Nombre: ${hotelesaccesibles.nombre}</p>
-    <img src=${hotelesaccesibles.imagen}/>
-    <p>Carpintería sin barreras: ${hotelesaccesibles.carpinteriasinbarreras ? 'Sí' : 'No'}</p>
-    <p>Cocina accesible: ${hotelesaccesibles.cocinaaccesible ? 'Sí' : 'No'}</p>
-    <p>Baño adaptado: ${hotelesaccesibles.banoadaptado ? 'Sí' : 'No'}</p>
-    <p>Ducha accesible: ${hotelesaccesibles.duchaaccesible ? 'Sí' : 'No'}</p>
-    <p>Piscina accesible: ${hotelesaccesibles.piscinaaccesible ? 'Sí' : 'No'}</p>
-    <p>Situación: ${hotelesaccesibles.situacion}</p>
+    <p>Nombre: ${hotel.nombre}</p>
+    <img src=${hotel.imagen}/>
+    <p>Carpintería sin barreras: ${hotel.carpinteriasinbarreras ? 'Sí' : 'No'}</p>
+    <p>Cocina accesible: ${hotel.cocinaaccesible ? 'Sí' : 'No'}</p>
+    <p>Baño adaptado: ${hotel.banoadaptado ? 'Sí' : 'No'}</p>
+    <p>Ducha accesible: ${hotel.duchaaccesible ? 'Sí' : 'No'}</p>
+    <p>Piscina accesible: ${hotel.piscinaaccesible ? 'Sí' : 'No'}</p>
+    <p>Situación: ${hotel.situacion}</p>
   `;
   section.appendChild(article);
 }
 }
 
+
+/*//funcion de pintar hoteles
+
+for (const hotel of hotelesaccesibles) {
+  //Creamos un article vacio en JS
+  const article = document.createElement("article");
+  //Le rellenamos el HTML al article con innerHTML
+  article.innerHTML = `
+  <h4>Hoteles adaptados de la sierra de Madrid</h4>
+    <p>Nombre: ${hotel.nombre}</p>
+    <img src=${hotel.imagen}/>
+    <p>Carpintería sin barreras: ${hotel.carpinteriasinbarreras ? 'Sí' : 'No'}</p>
+    <p>Cocina accesible: ${hotel.cocinaaccesible ? 'Sí' : 'No'}</p>
+    <p>Baño adaptado: ${hotel.banoadaptado ? 'Sí' : 'No'}</p>
+    <p>Ducha accesible: ${hotel.duchaaccesible ? 'Sí' : 'No'}</p>
+    <p>Piscina accesible: ${hotel.piscinaaccesible ? 'Sí' : 'No'}</p>
+    <p>Situación: ${hotel.situacion}</p>
+  `;
+  section.appendChild(article);*/
 //funcion pintar casasadaptadas
 const pintarcasasadaptadas = () => {
   //vaciamos
-  const main = document.querySelector("");
+  const main = document.querySelector("main");
     //Le rellenamos el HTML al article con innerHTML
   main.innerHTML = `
   <h4>Viviendas adaptadas de la sierra de Madrid</h4>
@@ -75,20 +97,20 @@ const pintarcasasadaptadas = () => {
 //buble casasadaptadas
 for (const casa of casasadaptadas) {
   //vaciamos main
-  const main = document.querySelector("");
+ 
   const article = document.createElement("article");
   article.innerHTML = `
-  <p>Precio: ${casasadaptadas.precio}</p>
-  <img src=${casasadaptadas.imagen}/>
-  <p>Metros cuadrados: ${casasadaptadas.metroscuadrados}</p>
-  <p>Orientación: ${casasadaptadas.orientacion}</p>
-  <p>Dormitorios: ${casasadaptadas.dormitorios}</p>
-  <p>Baños: ${casasadaptadas.banos}</p>
-  <p>Calefación: ${casasadaptadas.calefaccion}</p>
-  <p>Planta: ${casasadaptadas.planta}</p>
-  <p>Estado: ${casasadaptadas.estado}</p>
-  <p>Adaptada: ${casasadaptadas.adaptada ? 'Sí' : 'No'}</p>
-  <p>Tipo de adaptación: ${casasadaptadas.tipoadaptacion}</p>
+  <p>Precio: ${casa.precio}</p>
+  <img src=${casa.imagen}/>
+  <p>Metros cuadrados: ${casa.metroscuadrados}</p>
+  <p>Orientación: ${casa.orientacion}</p>
+  <p>Dormitorios: ${casa.dormitorios}</p>
+  <p>Baños: ${casa.banos}</p>
+  <p>Calefación: ${casa.calefaccion}</p>
+  <p>Planta: ${casa.planta}</p>
+  <p>Estado: ${casa.estado}</p>
+  <p>Adaptada: ${casa.adaptada ? 'Sí' : 'No'}</p>
+  <p>Tipo de adaptación: ${casa.tipoadaptacion}</p>
    `;
 
   section.appendChild(article);
@@ -97,24 +119,24 @@ for (const casa of casasadaptadas) {
 
 //creamos funcion pintar casarurales
 const pintarcasasrurales = () => {
-  const main = document.querySelector("");
+  const main = document.querySelector("main");
   //Recuperamos main
-   main.innerHTML = `
+  main.innerHTML = `
    <h4>Casa rurales adaptadas de la sierra de Madrid</h4>  
   <section id = "casasrurales"></section>
  `;
   const section = document.querySelector("#casasrurales");
 //buble
-for (const casa of casasrurales) {
+for (const rural of casasrurales) {
   const article = document.createElement("article");
   article.innerHTML = `
-  <p>Tipo: ${casasrurales.tipo}</p>
-  <img src=${casasrurales.imagen}/>
-  <p>Plazas: ${casasrurales.plazas}</p>
-  <p>Admite animales: ${casasrurales.admiteanimales ? 'Sí' : 'No'}</p>
-  <p>Interior: ${casasrurales.interior}</p>
-  <p>Exterior: ${casasrurales.exterior}</p>
-  <p>Situación: ${casasrurales.situacion}</p>
+  <p>Tipo: ${rural.tipo}</p>
+  <img src=${rural.imagen}/>
+  <p>Plazas: ${rural.plazas}</p>
+  <p>Admite animales: ${rural.admiteanimales ? 'Sí' : 'No'}</p>
+  <p>Interior: ${rural.interior}</p>
+  <p>Exterior: ${rural.exterior}</p>
+  <p>Situación: ${rural.situacion}</p>
   `;
 
   section.appendChild(article);
