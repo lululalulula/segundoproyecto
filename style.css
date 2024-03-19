@@ -21,7 +21,7 @@
 #tema {
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -41,7 +41,18 @@ button {
   top: 0;
   right: 0;
 }
+#alojamientos {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  border: 1px dashed var(--primary-color);
+  justify-content: space-between;
+  list-style: none;
+ }
+
 a {
+  display: flex;
+  flex-wrap: wrap-reverse;
   text-decoration: none;
   color: var(--primary-color);
   transition: 0.3s;
@@ -60,8 +71,12 @@ a:hover {
   width: 200px;
   
 }
+h1 {
+  text-align: center;
+}
 
 h3 {
+  padding: 40px;
   font-style: italic;
   font-weight: bold;
   justify-content: space-between;
@@ -69,20 +84,28 @@ h3 {
 }
 
 footer {
-  padding: 200px;
+  padding: 300px;
     justify-content: space-between;
     display: flex;
     flex-direction:inherit;
+    justify-content: space-between;
     }
 
 ul {
-  padding: 20px;
+  padding: 40px;
   display: flex;
   flex-wrap: wrap-reverse;
   border: 1px dashed var(--primary-color);
   justify-content: space-between;
   list-style: none;
  }
+
+
+
+
+ 
+
+
 
 
 
