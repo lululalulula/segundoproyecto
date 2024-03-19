@@ -6,18 +6,18 @@ import hotelesaccesibles from "./hotelesaccesibles.js";
 const dianoche = document.querySelector("#tema");
 //Le vamos a añadir un evento click que le añada y le quite una clase al body llamda dark
 dianoche.addEventListener("click", () => {
-console.log (prueba);
+  document.body.classList.toggle("dark");
 });
-// document.body.classList.toggle("dark");
 
+//creamos contact donde meteremos el evento lik
 const hotelesaccesibleslink = document.querySelector("#hotelesaccesibleslink");
 const casasadaptadaslink = document.querySelector("#casasadaptadaslink");
 const casasruraleslink = document.querySelector("#casasruraleslink");
 
-//pintar
-const main = document.querySelector("main");
 
 //funcion pintar home
+const main = document.querySelector("main");
+
 const pintarHome = () => {
   const main = document.querySelector("main");
   //Por seguridad, lo vaciamos
@@ -36,10 +36,9 @@ const pintarHome = () => {
 //funcion de pintar hoteles
 const pintarhotelesaccesibles = () => {
   //vaciamos
-  const main = document.querySelector("");
+  const main = document.querySelector(""); //lenamos con innerhtml
   main.innerHTML = `
-  <h4>Hoteles adaptados de la sierra de Madrid</h4>
-  <section id="hotelesaccesibles"></section>
+  <section id = "hotelesaccesibles"></section>
  `;
   const section = document.querySelector("#hotelesaccesibles");
 
@@ -49,6 +48,7 @@ for (const hotel of hotelesaccesibles) {
   const article = document.createElement("article");
   //Le rellenamos el HTML al article con innerHTML
   article.innerHTML = `
+  <h4>Hoteles adaptados de la sierra de Madrid</h4>
     <p>Nombre: ${hotelesaccesibles.nombre}</p>
     <img src=${hotelesaccesibles.imagen}/>
     <p>Carpintería sin barreras: ${hotelesaccesibles.carpinteriasinbarreras ? 'Sí' : 'No'}</p>
@@ -58,21 +58,20 @@ for (const hotel of hotelesaccesibles) {
     <p>Piscina accesible: ${hotelesaccesibles.piscinaaccesible ? 'Sí' : 'No'}</p>
     <p>Situación: ${hotelesaccesibles.situacion}</p>
   `;
-  hotelesaccesibles.appendChild(article);
+  section.appendChild(article);
 }
 }
 
 //funcion pintar casasadaptadas
-
 const pintarcasasadaptadas = () => {
   //vaciamos
   const main = document.querySelector("");
+    //Le rellenamos el HTML al article con innerHTML
   main.innerHTML = `
   <h4>Viviendas adaptadas de la sierra de Madrid</h4>
   <section id = "casasadaptadas"></section>
  `;
   const section = document.querySelector("#casasadaptadas");
-
 //buble casasadaptadas
 for (const casa of casasadaptadas) {
   //vaciamos main
@@ -92,19 +91,20 @@ for (const casa of casasadaptadas) {
   <p>Tipo de adaptación: ${casasadaptadas.tipoadaptacion}</p>
    `;
 
-  casasadaptadas.appendChild(article);
+  section.appendChild(article);
 }
 }
 
-
+//creamos funcion pintar casarurales
 const pintarcasasrurales = () => {
-  main.innerHTML = `
-  <h4>Casa rurales adaptadas de la sierra de Madrid</h4>
+  const main = document.querySelector("");
+  //Recuperamos main
+   main.innerHTML = `
+   <h4>Casa rurales adaptadas de la sierra de Madrid</h4>  
   <section id = "casasrurales"></section>
  `;
   const section = document.querySelector("#casasrurales");
-
-
+//buble
 for (const casa of casasrurales) {
   const article = document.createElement("article");
   article.innerHTML = `
@@ -117,23 +117,24 @@ for (const casa of casasrurales) {
   <p>Situación: ${casasrurales.situacion}</p>
   `;
 
-  casasrurales.appendChild(article);
+  section.appendChild(article);
 
 }
 }
 pintarHome();
 
-
-casasadaptadaslink.addEventListener("click", () => {
-  pintarcasasadaptadas();
-});
-
 hotelesaccesibleslink.addEventListener("click", () => {
-  pintarcasasrurales();
+  pintarhotelesaccesibles();
 });
 
 casasruraleslink.addEventListener("click", () => {
   pintarcasasrurales();
 });
+
+casasadaptadaslink.addEventListener("click", () => {
+  pintarcasasadaptadas();
+});
+
+
 
 
